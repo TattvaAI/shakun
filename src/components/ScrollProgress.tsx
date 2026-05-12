@@ -6,13 +6,13 @@ export default function ScrollProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handler = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<{ progress: number }>;
+      setProgress(customEvent.detail.progress * 100);
     };
-    window.addEventListener("scroll", handler, { passive: true });
-    return () => window.removeEventListener("scroll", handler);
+
+    window.addEventListener("lenis-scroll", handler);
+    return () => window.removeEventListener("lenis-scroll", handler);
   }, []);
 
   return (
@@ -21,10 +21,11 @@ export default function ScrollProgress() {
       style={{ background: "rgba(46, 46, 53, 0.3)" }}
     >
       <div
-        className="h-full transition-[width] duration-150 ease-out"
+        className="h-full"
         style={{
           width: `${progress}%`,
           background: "linear-gradient(90deg, var(--color-accent-dim), var(--color-accent), var(--color-accent-bright))",
+          transition: "width 0.1s ease-out",
         }}
       />
     </div>

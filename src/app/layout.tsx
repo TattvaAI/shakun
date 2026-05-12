@@ -59,32 +59,16 @@ export const metadata: Metadata = {
     title: "Shakuns Freight Forwarders — Premium Logistics, Ambala",
     description:
       "India's most trusted freight forwarding partner. Serving global trade from Manav Chowk, Ambala since 2002.",
-    images: [
-      {
-        url: "https://shakun.vercel.app/assets/logo-preview.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Shakuns Freight Forwarders Logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shakuns Freight Forwarders — Premium Logistics, Ambala",
     description:
       "India's most trusted freight forwarding partner. DTDC, DHL, FedEx, Delhivery, Blue Dart, Ekart.",
-    images: ["https://shakun.vercel.app/assets/logo-preview.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-  other: {
-    "application-name": "Shakuns Freight Forwarders",
-    "msapplication-TileColor": "#D4A853",
-    "theme-color": "#09090B",
-    "google-site-verification": "",
   },
 };
 
