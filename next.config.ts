@@ -37,11 +37,7 @@ const nextConfig: NextConfig = {
   },
 
   // ✅ Enable experimental features
-  experimental: {
-    optimizeCss: true,
-    // Instrumentation for observability
-    instrumentationHook: true,
-  },
+  experimental: {},
 
   // ✅ Environment variables that must be present at build time
   env: {
