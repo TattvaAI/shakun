@@ -18,8 +18,6 @@ function BrandBadge({
 }: {
   name: string;
   color: string;
-  bgText: string;
-  index: number;
 }) {
   return (
     <div
@@ -89,7 +87,7 @@ export default function BrandMarquee() {
           }}
         >
           {track.map((brand, i) => (
-            <BrandBadge key={`${brand.name}-${i}`} {...brand} index={i} />
+            <BrandBadge key={`${brand.name}-${i}`} name={brand.name} color={brand.color} />
           ))}
         </div>
       </div>

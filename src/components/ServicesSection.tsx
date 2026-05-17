@@ -9,7 +9,7 @@ const services = [
     title: "International Freight",
     desc: "Door-to-door air and sea freight via DHL, FedEx, and TNT networks across 220+ countries.",
     tag: "Global",
-    span: "md:col-span-2 md:row-span-1",
+    spanClass: "md:col-span-2 md:row-span-1",
     featured: true,
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: "Domestic Courier",
     desc: "Same-day and next-day delivery across India via DTDC, Blue Dart, Ekart & Delhivery.",
     tag: "Domestic",
-    span: "",
+    spanClass: "",
     featured: false,
   },
   {
@@ -25,7 +25,7 @@ const services = [
     title: "Custom Packaging",
     desc: "Professional packing for fragile, high-value, and commercial shipments.",
     tag: "Protection",
-    span: "",
+    spanClass: "",
     featured: false,
   },
   {
@@ -33,7 +33,7 @@ const services = [
     title: "Supply Chain",
     desc: "End-to-end logistics analysis and route optimization for businesses.",
     tag: "Enterprise",
-    span: "",
+    spanClass: "",
     featured: false,
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Cargo Insurance",
     desc: "Comprehensive transit insurance with rapid claim settlement.",
     tag: "Security",
-    span: "",
+    spanClass: "",
     featured: false,
   },
   {
@@ -49,7 +49,7 @@ const services = [
     title: "Real-Time Tracking",
     desc: "Live shipment visibility across all carrier networks from a single dashboard.",
     tag: "Technology",
-    span: "",
+    spanClass: "",
     featured: false,
   },
 ];
@@ -88,7 +88,7 @@ export default function ServicesSection() {
             return (
               <motion.div
                 key={s.title}
-                className={`card group relative p-7 md:p-8 flex flex-col justify-between gap-6 min-h-[200px] overflow-hidden md:${s.span}`}
+                className={`card group relative p-7 md:p-8 flex flex-col justify-between gap-6 min-h-[200px] overflow-hidden ${s.spanClass}`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}

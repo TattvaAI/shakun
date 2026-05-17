@@ -111,20 +111,16 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href="tel:+919999000171"
-                className="flex items-center gap-2.5 text-sm transition-colors group"
+                className="flex items-center gap-2.5 text-sm transition-colors group hover:text-[var(--color-accent)]"
                 style={{ color: "var(--color-muted)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-accent)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-muted)"; }}
               >
                 <Phone size={14} style={{ color: "var(--color-accent)" }} />
                 +91 99990 00171
               </a>
               <a
                 href="mailto:shakunsfreight@gmail.com"
-                className="flex items-center gap-2.5 text-sm transition-colors group"
+                className="flex items-center gap-2.5 text-sm transition-colors group hover:text-[var(--color-accent)]"
                 style={{ color: "var(--color-muted)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-accent)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-muted)"; }}
               >
                 <Mail size={14} style={{ color: "var(--color-accent)" }} />
                 shakunsfreight@gmail.com
@@ -152,10 +148,8 @@ export default function Footer() {
                 <li key={s}>
                   <a
                     href="#services"
-                    className="text-sm transition-colors"
+                    className="text-sm transition-colors hover:text-[var(--color-accent)]"
                     style={{ color: "var(--color-muted)" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-accent)"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-muted)"; }}
                   >
                     {s}
                   </a>

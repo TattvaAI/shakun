@@ -35,9 +35,9 @@ const nextConfig: NextConfig = {
   // ✅ Enable experimental features
   experimental: {},
 
-  // ✅ Environment variables that must be present at build time
+  // ✅ Environment variables - read from process.env with fallbacks
   env: {
-    NEXT_PUBLIC_APP_NAME: "Shakuns Freight Forwarders",
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME || "Shakuns Freight Forwarders",
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || "https://shakun.vercel.app",
   },
 

@@ -1,35 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export default function ScrollProgress() {
-  const progressRef = useRef(0);
-  const directionRef = useRef(1);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    let animationId: number;
-
-    const animate = () => {
-      progressRef.current += 0.15 * directionRef.current;
-
-      if (progressRef.current >= 100) {
-        progressRef.current = 100;
-        directionRef.current = -1;
-      } else if (progressRef.current <= 0) {
-        progressRef.current = 0;
-        directionRef.current = 1;
-      }
-
-      const bar = document.getElementById("scroll-progress-bar");
-      if (bar) {
-        bar.style.width = `${progressRef.current}%`;
-      }
-
-      animationId = requestAnimationFrame(animate);
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setProgress(scrollPercent);
     };
 
-    animationId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationId);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -38,10 +23,9 @@ export default function ScrollProgress() {
       style={{ background: "rgba(46, 46, 53, 0.3)" }}
     >
       <div
-        id="scroll-progress-bar"
-        className="h-full"
+        className="h-full transition-[width] duration-100 ease-out"
         style={{
-          width: "0%",
+          width: `${progress}%`,
           background: "linear-gradient(90deg, var(--color-accent-dim), var(--color-accent), var(--color-accent-bright))",
         }}
       />
